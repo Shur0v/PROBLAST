@@ -29,10 +29,10 @@ export default function ServiceAreas() {
             <p className="text-lg text-stone-500 mb-10 leading-relaxed">
               We provide mobile on-site services across Abu Dhabi and Dubai. Our specialized trucks are equipped to handle any residential or commercial project regardless of location.
             </p>
-            
+
             <div className="grid grid-cols-2 gap-4">
               {locations.map((loc, index) => (
-                <motion.div 
+                <motion.div
                   key={loc.name}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -48,11 +48,12 @@ export default function ServiceAreas() {
           </div>
 
           <div className="relative">
-            <div className="aspect-square bg-[#001F3F] rounded-[3rem] relative overflow-hidden p-12 flex flex-col justify-between">
-              <div className="absolute top-0 right-0 w-full h-full opacity-10">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent" />
-              </div>
-              
+            <div className="aspect-square rounded-[3rem] relative overflow-hidden p-12 flex flex-col justify-between"
+              style={{ backgroundImage: "url('https://cdn.simplegreen.com/web22/images/blog/pressure_washing_surfaces_to_clean.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}
+            >
+              {/* Blueish overlay */}
+              <div className="absolute inset-0 bg-[#001F3F]/80" />
+
               <div className="relative z-10">
                 <div className="w-16 h-16 bg-[#FFD700] rounded-2xl flex items-center justify-center mb-8">
                   <MapPin size={32} className="text-[#001F3F]" />
@@ -64,7 +65,7 @@ export default function ServiceAreas() {
               </div>
 
               <div className="relative z-10">
-                <a 
+                <a
                   href="tel:+1234567890"
                   className="inline-flex items-center gap-2 text-[#FFD700] font-bold text-lg group"
                 >
@@ -73,7 +74,7 @@ export default function ServiceAreas() {
                 </a>
               </div>
             </div>
-            
+
             {/* Decorative elements */}
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#FFD700] rounded-full -z-10" />
           </div>

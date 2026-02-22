@@ -23,10 +23,11 @@ export default function Header() {
   ];
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'
-      }`}
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+          ? 'bg-white/90 backdrop-blur-md shadow-sm py-3'
+          : 'bg-white/15 backdrop-blur-md border-b border-white/20 py-5'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
@@ -35,7 +36,7 @@ export default function Header() {
             <div className="w-10 h-10 bg-navy-900 flex items-center justify-center rounded-lg bg-[#001F3F]">
               <span className="text-white font-display font-bold text-xl">P</span>
             </div>
-            <span className={`font-display font-bold text-xl tracking-tight ${isScrolled ? 'text-stone-900' : 'text-stone-900'}`}>
+            <span className={`font-display font-bold text-xl tracking-tight ${isScrolled ? 'text-stone-900' : 'text-white drop-shadow-md'}`}>
               PROBLAST
             </span>
           </Link>
@@ -43,10 +44,13 @@ export default function Header() {
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <Link 
-                key={link.name} 
+              <Link
+                key={link.name}
                 href={link.href}
-                className="text-sm font-medium hover:text-navy-600 transition-colors"
+                className={`text-sm font-medium transition-colors ${isScrolled
+                    ? 'text-stone-700 hover:text-[#001F3F]'
+                    : 'text-white/90 hover:text-white drop-shadow-sm'
+                  }`}
               >
                 {link.name}
               </Link>
@@ -55,11 +59,11 @@ export default function Header() {
 
           {/* Actions */}
           <div className="hidden md:flex items-center gap-6">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-stone-600 hover:text-pink-600 transition-colors">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={`transition-colors ${isScrolled ? 'text-stone-600 hover:text-pink-600' : 'text-white/80 hover:text-white'}`}>
               <Instagram size={20} />
             </a>
-            <a 
-              href="tel:+1234567890" 
+            <a
+              href="tel:+1234567890"
               className="flex items-center gap-2 bg-[#001F3F] text-white px-5 py-2.5 rounded-full font-medium text-sm hover:bg-navy-800 transition-all shadow-md hover:shadow-lg active:scale-95"
             >
               <Phone size={16} />
@@ -68,8 +72,8 @@ export default function Header() {
           </div>
 
           {/* Mobile Toggle */}
-          <button 
-            className="md:hidden p-2 text-stone-900"
+          <button
+            className={`md:hidden p-2 ${isScrolled ? 'text-stone-900' : 'text-white'}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -88,8 +92,8 @@ export default function Header() {
           >
             <div className="px-4 py-6 space-y-4">
               {navLinks.map((link) => (
-                <Link 
-                  key={link.name} 
+                <Link
+                  key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="block text-lg font-medium text-stone-900"
@@ -98,15 +102,15 @@ export default function Header() {
                 </Link>
               ))}
               <div className="pt-4 flex flex-col gap-4">
-                <a 
-                  href="tel:+1234567890" 
+                <a
+                  href="tel:+1234567890"
                   className="flex items-center justify-center gap-2 bg-[#001F3F] text-white py-4 rounded-xl font-bold"
                 >
                   <Phone size={20} />
                   <span>Call (123) 456-7890</span>
                 </a>
                 <div className="flex justify-center gap-6 py-2">
-                   <Instagram size={24} className="text-stone-600" />
+                  <Instagram size={24} className="text-stone-600" />
                 </div>
               </div>
             </div>

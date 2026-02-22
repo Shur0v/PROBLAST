@@ -9,20 +9,19 @@ import Link from 'next/link';
 export default function Hero() {
   const [isAfter, setIsAfter] = useState(true);
 
-  const beforeUrl = "https://chatgpt.com/backend-api/estuary/content?id=file_00000000957072098d52896689fc4e3f&ts=492163&p=fs&cid=1&sig=9c140b305bbfe38ff7053f2574cbb307af7f0136a6f63e320b00620dc42b0abf&v=0";
-  const afterUrl = "https://chatgpt.com/backend-api/estuary/content?id=file_000000000fc8720691a3187a10a1736a&ts=492163&p=fs&cid=1&sig=4fe2776b377d2424595d91026ba5d439bf8a8d1c4824ba05d344c3cf661e63bc&v=0";
+  const beforeUrl = "/before.png";
+  const afterUrl = "/after.png";
 
   return (
     <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
       {/* Background with Before/After Toggle */}
       <div className="absolute inset-0 z-0">
-        <Image 
+        <Image
           src={isAfter ? afterUrl : beforeUrl}
           alt="Pressure washing background"
           fill
           className="object-cover transition-opacity duration-700"
           priority
-          referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
       </div>
@@ -46,14 +45,14 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link 
+              <Link
                 href="/contact"
                 className="flex items-center justify-center gap-2 bg-[#FFD700] text-[#001F3F] px-8 py-4 rounded-xl font-bold text-lg hover:bg-yellow-400 transition-all shadow-xl shadow-yellow-500/20 active:scale-95"
               >
                 Request a Quote
                 <ArrowRight size={20} />
               </Link>
-              <Link 
+              <Link
                 href="/services"
                 className="flex items-center justify-center gap-2 bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all active:scale-95"
               >
@@ -63,7 +62,7 @@ export default function Hero() {
           </motion.div>
 
           {/* Trust Signals */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.6 }}
@@ -90,17 +89,17 @@ export default function Hero() {
         <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-4 rounded-2xl flex flex-col gap-4">
           <p className="text-white text-xs font-bold uppercase tracking-widest text-center">See the Difference</p>
           <div className="flex items-center gap-4">
-            <span className={`text-xs font-bold ${isAfter ? 'text-[#FFD700]' : 'text-white/50'}`}>AFTER</span>
-            <button 
+            <span className={`text-xs font-bold ${!isAfter ? 'text-[#FFD700]' : 'text-white/50'}`}>BEFORE</span>
+            <button
               onClick={() => setIsAfter(!isAfter)}
               className="w-14 h-8 bg-white/20 rounded-full relative p-1 transition-colors"
             >
-              <motion.div 
-                animate={{ x: isAfter ? 0 : 24 }}
+              <motion.div
+                animate={{ x: isAfter ? 24 : 0 }}
                 className="w-6 h-6 bg-[#FFD700] rounded-full shadow-lg"
               />
             </button>
-            <span className={`text-xs font-bold ${!isAfter ? 'text-[#FFD700]' : 'text-white/50'}`}>BEFORE</span>
+            <span className={`text-xs font-bold ${isAfter ? 'text-[#FFD700]' : 'text-white/50'}`}>AFTER</span>
           </div>
         </div>
       </div>

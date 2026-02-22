@@ -20,7 +20,7 @@ export default function HomePage() {
     <main className="min-h-screen">
       <Header />
       <Hero />
-      
+
       {/* Stats / Trust Bar */}
       <section className="bg-[#001F3F] py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,9 +41,9 @@ export default function HomePage() {
       </section>
 
       <ServicesOverview />
-      
+
       <WhyChooseUs />
-      
+
       {/* Featured CTA Section */}
       <section className="py-24 bg-stone-50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -59,14 +59,14 @@ export default function HomePage() {
                   Don&apos;t let dirt and grime devalue your investment. Get a professional grade clean that lasts.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Link 
+                  <Link
                     href="/contact"
                     className="bg-[#FFD700] text-[#001F3F] px-10 py-5 rounded-2xl font-bold text-lg hover:bg-yellow-400 transition-all flex items-center justify-center gap-2 whitespace-nowrap"
                   >
                     Get a Free Quote
                     <ArrowRight size={20} />
                   </Link>
-                  <a 
+                  <a
                     href="tel:+1234567890"
                     className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all flex items-center justify-center gap-2 whitespace-nowrap"
                   >
@@ -78,13 +78,17 @@ export default function HomePage() {
               <div className="hidden lg:block relative">
                 <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-3xl">
                   <div className="flex gap-1 mb-4">
-                    {[1,2,3,4,5].map(i => <Star key={i} size={20} className="fill-[#FFD700] text-[#FFD700]" />)}
+                    {[1, 2, 3, 4, 5].map(i => <Star key={i} size={20} className="fill-[#FFD700] text-[#FFD700]" />)}
                   </div>
                   <p className="text-xl text-white italic mb-6">
                     &quot;The difference was night and day. My driveway looks brand new and the team was incredibly professional. Highly recommend their sandblasting service!&quot;
                   </p>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-stone-700" />
+                    <img
+                      src="https://i.pravatar.cc/150?img=11"
+                      alt="Ahmed Al-Mansoori"
+                      className="w-12 h-12 rounded-full object-cover ring-2 ring-white/20"
+                    />
                     <div>
                       <div className="font-bold text-white">Ahmed Al-Mansoori</div>
                       <div className="text-white/50 text-sm">Homeowner, Abu Dhabi</div>
@@ -118,7 +122,7 @@ export default function HomePage() {
               <p className="text-xl text-stone-500 mb-12 leading-relaxed">
                 Fill out the form and we&apos;ll provide a detailed quote within 24 hours. For urgent requests, please call us directly.
               </p>
-              
+
               <div className="space-y-8">
                 <div className="flex gap-6">
                   <div className="w-14 h-14 bg-stone-100 rounded-2xl flex items-center justify-center shrink-0">
@@ -149,7 +153,7 @@ export default function HomePage() {
 
       {/* Sticky Mobile CTA */}
       <div className="md:hidden fixed bottom-6 left-6 right-6 z-40">
-        <a 
+        <a
           href="tel:+1234567890"
           className="w-full bg-[#001F3F] text-white py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 shadow-2xl shadow-navy-900/40 active:scale-95 transition-transform"
         >

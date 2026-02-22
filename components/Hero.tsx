@@ -7,14 +7,17 @@ import { ArrowRight, Play } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Hero() {
-  const [isAfter, setIsAfter] = useState(false);
+  const [isAfter, setIsAfter] = useState(true);
+
+  const beforeUrl = "https://chatgpt.com/backend-api/estuary/content?id=file_00000000957072098d52896689fc4e3f&ts=492163&p=fs&cid=1&sig=9c140b305bbfe38ff7053f2574cbb307af7f0136a6f63e320b00620dc42b0abf&v=0";
+  const afterUrl = "https://chatgpt.com/backend-api/estuary/content?id=file_000000000fc8720691a3187a10a1736a&ts=492163&p=fs&cid=1&sig=4fe2776b377d2424595d91026ba5d439bf8a8d1c4824ba05d344c3cf661e63bc&v=0";
 
   return (
     <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
       {/* Background with Before/After Toggle */}
       <div className="absolute inset-0 z-0">
         <Image 
-          src={isAfter ? "https://picsum.photos/seed/clean/1920/1080" : "https://picsum.photos/seed/dirty/1920/1080"}
+          src={isAfter ? afterUrl : beforeUrl}
           alt="Pressure washing background"
           fill
           className="object-cover transition-opacity duration-700"
@@ -87,17 +90,17 @@ export default function Hero() {
         <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-4 rounded-2xl flex flex-col gap-4">
           <p className="text-white text-xs font-bold uppercase tracking-widest text-center">See the Difference</p>
           <div className="flex items-center gap-4">
-            <span className={`text-xs font-bold ${!isAfter ? 'text-[#FFD700]' : 'text-white/50'}`}>BEFORE</span>
+            <span className={`text-xs font-bold ${isAfter ? 'text-[#FFD700]' : 'text-white/50'}`}>AFTER</span>
             <button 
               onClick={() => setIsAfter(!isAfter)}
               className="w-14 h-8 bg-white/20 rounded-full relative p-1 transition-colors"
             >
               <motion.div 
-                animate={{ x: isAfter ? 24 : 0 }}
+                animate={{ x: isAfter ? 0 : 24 }}
                 className="w-6 h-6 bg-[#FFD700] rounded-full shadow-lg"
               />
             </button>
-            <span className={`text-xs font-bold ${isAfter ? 'text-[#FFD700]' : 'text-white/50'}`}>AFTER</span>
+            <span className={`text-xs font-bold ${!isAfter ? 'text-[#FFD700]' : 'text-white/50'}`}>BEFORE</span>
           </div>
         </div>
       </div>

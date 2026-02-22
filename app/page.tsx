@@ -5,6 +5,10 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import ServicesOverview from '@/components/ServicesOverview';
 import BeforeAfterGallery from '@/components/BeforeAfterGallery';
+import WhyChooseUs from '@/components/WhyChooseUs';
+import ServiceAreas from '@/components/ServiceAreas';
+import FAQ from '@/components/FAQ';
+import SocialFeed from '@/components/SocialFeed';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
 import { motion } from 'motion/react';
@@ -37,6 +41,8 @@ export default function HomePage() {
       </section>
 
       <ServicesOverview />
+      
+      <WhyChooseUs />
       
       {/* Featured CTA Section */}
       <section className="py-24 bg-stone-50 overflow-hidden">
@@ -92,6 +98,12 @@ export default function HomePage() {
       </section>
 
       <BeforeAfterGallery />
+
+      <ServiceAreas />
+
+      <FAQ />
+
+      <SocialFeed />
 
       {/* Contact Section */}
       <section className="py-24 bg-white">

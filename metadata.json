@@ -1,0 +1,5 @@
+{
+  "name": "ProBlast & Wash",
+  "description": "Professional Pressure Washing & Sandblasting services for residential and commercial properties.",
+  "requestFramePermissions": ["geolocation"]
+}
